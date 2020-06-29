@@ -14,8 +14,8 @@ sheet = gc.open("home_temp_humidity_log").sheet1
 
 while True:
     humidity, temp = Adafruit_DHT.read_retry(Adafruit_DHT.AM2302, 4)
-    now = datetime.now()
-    dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+    #now = datetime.now()
+    #dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
     #print(dt_string)
     if humidity is not None and temp is not None:
         sheet.append_row((datetime.now().isoformat(), temp, humidity))
